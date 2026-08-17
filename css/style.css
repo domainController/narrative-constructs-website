@@ -1,15 +1,15 @@
 /* ============================================================
    AUDITUM MEMORIA — SHARED STYLESHEET
-   Version: 2.1.0
-   Updated: 2026-07-08 — lang-switch merged into meta-bar (front-matter)
+   Version: 2.2.0
+   Updated: 2026-08-18 — switched to light theme (same layout/structure)
    Usage: <link rel="stylesheet" href="css/style.css"> (adjust ../ per depth)
    ============================================================ */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: #0a0e27;
-  color: #e0e0e0;
+  background: #f7f8fc;
+  color: #2c3049;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.7;
 }
@@ -33,8 +33,8 @@ body {
   justify-content: space-between;
   gap: 10px 16px;
   font-size: 0.82em;
-  color: #7a8296;
-  border-bottom: 1px solid #1e2340;
+  color: #6b7280;
+  border-bottom: 1px solid #e2e4ef;
   padding-bottom: 18px;
   margin-bottom: 40px;
   font-family: 'SF Mono', Consolas, monospace;
@@ -45,26 +45,26 @@ body {
   gap: 8px 16px;
   align-items: center;
 }
-.meta-bar span.category { color: #4a90e2; font-weight: 600; }
-.meta-bar span.sep { color: #33395c; }
+.meta-bar span.category { color: #2f6fc4; font-weight: 600; }
+.meta-bar span.sep { color: #c7cbdc; }
 
 /* ---- Titres et sous-titres ---- */
 
 h1 {
   font-size: 1.7em;
-  color: #fff;
+  color: #14162b;
   margin-bottom: 12px;
   font-weight: 700;
 }
 
 h2 {
-  color: #fff;
+  color: #14162b;
   font-size: 1.15em;
   margin: 36px 0 14px;
 }
 
 .subtitle {
-  color: #7a8296;
+  color: #6b7280;
   margin-bottom: 44px;
   font-size: 0.95em;
 }
@@ -73,26 +73,26 @@ h2 {
 
 .exec-def {
   font-size: 1.1em;
-  color: #f0f0f5;
-  border-left: 3px solid #4a90e2;
+  color: #1a1d2e;
+  border-left: 3px solid #2f6fc4;
   padding-left: 20px;
   margin-bottom: 40px;
 }
 
 /* ---- Paragraphes de corps ---- */
 
-p { margin-bottom: 20px; color: #c8cce0; }
+p { margin-bottom: 20px; color: #3a3f56; }
 
 /* ---- Concept blocks (utilisés dans Grounds/Genealogy/Stance/Mechanics) ---- */
 
 .concept {
-  background: #10142e;
+  background: #eef0f8;
   border-radius: 6px;
   padding: 16px 18px;
   margin-bottom: 16px;
 }
 .concept .term {
-  color: #4a90e2;
+  color: #2f6fc4;
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -100,13 +100,13 @@ p { margin-bottom: 20px; color: #c8cce0; }
 /* ---- Summary box (résumé en trois phrases, fond vert) ---- */
 
 .summary-box {
-  background: #16311f;
+  background: #eaf7ec;
   border-radius: 6px;
   padding: 20px;
   margin: 32px 0;
-  border-left: 3px solid #6bcf7f;
+  border-left: 3px solid #4fae6b;
 }
-.summary-box p { color: #c8f0d0; margin-bottom: 10px; }
+.summary-box p { color: #1f6b34; margin-bottom: 10px; }
 .summary-box p:last-child { margin-bottom: 0; }
 
 /* ---- Structure arborescente (utilisée par index.html) ---- */
@@ -114,19 +114,19 @@ p { margin-bottom: 20px; color: #c8cce0; }
 .branch {
   margin-bottom: 8px;
   padding: 14px 0;
-  border-bottom: 1px solid #161a33;
+  border-bottom: 1px solid #e7e9f2;
 }
 .branch:last-child { border-bottom: none; }
 
 .branch-title {
-  color: #fff;
+  color: #14162b;
   font-size: 1.05em;
   font-weight: 600;
   margin-bottom: 4px;
 }
-.branch-title a { color: #fff; text-decoration: none; }
-.branch-title a:visited { color: #fff; }
-.branch-title a:hover { color: #4a90e2; }
+.branch-title a { color: #14162b; text-decoration: none; }
+.branch-title a:visited { color: #14162b; }
+.branch-title a:hover { color: #2f6fc4; }
 
 /* ---- Accordéon natif (<details>/<summary>), zéro JS ----
    .branch-title est réutilisé comme <summary> : on masque le marqueur
@@ -145,7 +145,7 @@ summary.branch-title::-webkit-details-marker { display: none; }
 summary.branch-title::before {
   content: "▸";
   display: inline-block;
-  color: #7a8296;
+  color: #6b7280;
   transition: transform 0.15s ease;
   flex-shrink: 0;
 }
@@ -154,7 +154,7 @@ details[open] > summary.branch-title::before {
 }
 
 .branch-desc {
-  color: #8a90a8;
+  color: #6b7280;
   font-size: 0.88em;
   margin-bottom: 10px;
 }
@@ -162,18 +162,18 @@ details[open] > summary.branch-title::before {
 .children {
   margin-left: 20px;
   padding-left: 16px;
-  border-left: 1px solid #232849;
+  border-left: 1px solid #dde0ee;
 }
 
 .child {
   padding: 6px 0;
   font-size: 0.92em;
 }
-.child a { color: #b8bcd8; text-decoration: none; }
-.child a:visited { color: #b8bcd8; }
-.child a:hover { color: #4a90e2; text-decoration: underline; }
-.child .note { color: #5a6080; font-size: 0.85em; margin-left: 8px; }
-.child-desc { color: #5a6080; font-size: 0.85em; margin-top: 3px; }
+.child a { color: #4b5170; text-decoration: none; }
+.child a:visited { color: #4b5170; }
+.child a:hover { color: #2f6fc4; text-decoration: underline; }
+.child .note { color: #7d83a0; font-size: 0.85em; margin-left: 8px; }
+.child-desc { color: #7d83a0; font-size: 0.85em; margin-top: 3px; }
 
 /* ---- Tags de statut (live / draft / planned) ---- */
 
@@ -185,30 +185,30 @@ details[open] > summary.branch-title::before {
   margin-left: 8px;
   font-family: 'SF Mono', Consolas, monospace;
 }
-.status-live { background: #16311f; color: #6bcf7f; }
-.status-draft { background: #332412; color: #e0a94a; }
-.status-planned { background: #241832; color: #a888d0; }
-.status-ready { background: #0d2b33; color: #4ac8e0; }
+.status-live { background: #e3f7e8; color: #1f8a3d; }
+.status-draft { background: #fdf1de; color: #a56a12; }
+.status-planned { background: #f1e8fa; color: #7a4fa8; }
+.status-ready { background: #e1f5fa; color: #147a91; }
 
 /* ---- Liens internes — vers un concept du glossaire, même corpus ---- */
 
 a.link-internal {
-  color: #a888d0;
+  color: #7a4fa8;
   text-decoration: none;
-  border-bottom: 1px dotted #a888d0;
+  border-bottom: 1px dotted #7a4fa8;
 }
-a.link-internal:visited { color: #a888d0; }
-a.link-internal:hover { color: #c4aee8; border-bottom-style: solid; }
+a.link-internal:visited { color: #7a4fa8; }
+a.link-internal:hover { color: #9366c2; border-bottom-style: solid; }
 
 /* ---- Liens externes — vers une source ou figure d'autorité extérieure ---- */
 
 a.link-external {
-  color: #6bcf7f;
+  color: #2f9c53;
   text-decoration: none;
-  border-bottom: 1px solid #6bcf7f;
+  border-bottom: 1px solid #2f9c53;
 }
-a.link-external:visited { color: #6bcf7f; }
-a.link-external:hover { color: #8fe89f; }
+a.link-external:visited { color: #2f9c53; }
+a.link-external:hover { color: #278046; }
 a.link-external::after {
   content: " ↗";
   font-size: 0.85em;
@@ -226,25 +226,25 @@ a.link-external::after {
 .lang-switch a {
   font-size: 0.78em;
   font-family: 'SF Mono', Consolas, monospace;
-  color: #7a8296;
+  color: #6b7280;
   text-decoration: none;
   padding: 3px 9px;
-  border: 1px solid #232849;
+  border: 1px solid #d5d8e6;
   border-radius: 4px;
 }
-.lang-switch a:hover { color: #4a90e2; border-color: #4a90e2; }
-.lang-switch a.active { color: #fff; background: #1e2340; border-color: #1e2340; }
+.lang-switch a:hover { color: #2f6fc4; border-color: #2f6fc4; }
+.lang-switch a.active { color: #14162b; background: #eef0f8; border-color: #c7cbdc; }
 
 /* ---- Liens de navigation générique ---- */
 
 .back-link {
   display: inline-block;
   margin-top: 40px;
-  color: #4a90e2;
+  color: #2f6fc4;
   text-decoration: none;
   font-size: 0.9em;
 }
-.back-link:visited { color: #4a90e2; }
+.back-link:visited { color: #2f6fc4; }
 .back-link:hover { text-decoration: underline; }
 
 /* ---- Front-matter block (pages Asset) — clé/valeur alignées ---- */
@@ -259,7 +259,7 @@ a.link-external::after {
   align-items: center;
   gap: 14px;
   padding: 8px 0;
-  border-bottom: 1px solid #161a33;
+  border-bottom: 1px solid #e7e9f2;
 }
 .fm-key-col {
   flex: 0 0 140px;
@@ -267,15 +267,15 @@ a.link-external::after {
 }
 .fm-key {
   display: inline-block;
-  background: #16233d;
-  color: #6bb3f0;
+  background: #e7f1fc;
+  color: #2f6fc4;
   padding: 2px 9px;
   border-radius: 3px;
   white-space: nowrap;
 }
 .fm-value {
   flex: 1;
-  color: #c8cce0;
+  color: #3a3f56;
   text-align: left;
 }
 .fm-value a.link-internal { font-family: 'SF Mono', Consolas, monospace; }
@@ -283,7 +283,7 @@ a.link-external::after {
 /* ---- Message des pages d'attente (destinations draft/planned/ready pas encore construites) ---- */
 
 .placeholder-message {
-  color: #8a90a8;
+  color: #6b7280;
   font-size: 1.05em;
   margin-top: 24px;
 }
