@@ -1,16 +1,17 @@
 /* ============================================================
    AUDITUM MEMORIA — SHARED STYLESHEET
-   Version: 2.1.0-light — light/warm variant of the canonical 2.1.0
-   Updated: 2026-08-18 — same structure/classes as the dark original,
-   repainted light + warm terracotta accent (no blue).
+   Version: 2.1.0 — canonical dark theme, restored from auditum-memoria.com
+   Updated: 2026-08-18 — reverted from the light/warm repaint back to the
+   canonical dark navy palette; kept .brand-h1/.brand-icon (narrative-
+   constructs-only addition for the emoji lockup on index.html).
    Usage: <link rel="stylesheet" href="css/style.css"> (adjust ../ per depth)
    ============================================================ */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: #f7f2ea;
-  color: #241f18;
+  background: #0a0e27;
+  color: #e0e0e0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.7;
 }
@@ -34,8 +35,8 @@ body {
   justify-content: space-between;
   gap: 10px 16px;
   font-size: 0.82em;
-  color: #8a7d6c;
-  border-bottom: 1px solid #e5dccc;
+  color: #7a8296;
+  border-bottom: 1px solid #1e2340;
   padding-bottom: 18px;
   margin-bottom: 40px;
   font-family: 'SF Mono', Consolas, monospace;
@@ -46,26 +47,29 @@ body {
   gap: 8px 16px;
   align-items: center;
 }
-.meta-bar span.category { color: #b5502b; font-weight: 600; }
-.meta-bar span.sep { color: #d8cbb5; }
+.meta-bar span.category { color: #4a90e2; font-weight: 600; }
+.meta-bar span.sep { color: #33395c; }
 
 /* ---- Titres et sous-titres ---- */
 
 h1 {
   font-size: 1.7em;
-  color: #241f18;
+  color: #fff;
   margin-bottom: 12px;
   font-weight: 700;
 }
 
+.brand-h1 { display: flex; align-items: center; gap: 12px; }
+.brand-icon { font-size: 1em; line-height: 1; }
+
 h2 {
-  color: #241f18;
+  color: #fff;
   font-size: 1.15em;
   margin: 36px 0 14px;
 }
 
 .subtitle {
-  color: #8a7d6c;
+  color: #7a8296;
   margin-bottom: 44px;
   font-size: 0.95em;
 }
@@ -74,26 +78,27 @@ h2 {
 
 .exec-def {
   font-size: 1.1em;
-  color: #241f18;
-  border-left: 3px solid #b5502b;
+  color: #f0f0f5;
+  border-left: 3px solid #4a90e2;
   padding-left: 20px;
   margin-bottom: 40px;
 }
 
 /* ---- Paragraphes de corps ---- */
 
-p { margin-bottom: 20px; color: #4a4030; }
+p { margin-bottom: 20px; color: #c8cce0; }
 
 /* ---- Concept blocks (utilisés dans Grounds/Genealogy/Stance/Mechanics) ---- */
 
 .concept {
-  background: #f3ecdd;
+  background: #10142e;
   border-radius: 6px;
   padding: 16px 18px;
   margin-bottom: 16px;
+  font-size: 0.92em;
 }
 .concept .term {
-  color: #b5502b;
+  color: #4a90e2;
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -101,13 +106,13 @@ p { margin-bottom: 20px; color: #4a4030; }
 /* ---- Summary box (résumé en trois phrases, fond vert) ---- */
 
 .summary-box {
-  background: #eaf7ec;
+  background: #16311f;
   border-radius: 6px;
   padding: 20px;
   margin: 32px 0;
-  border-left: 3px solid #4fae6b;
+  border-left: 3px solid #6bcf7f;
 }
-.summary-box p { color: #1f6b34; margin-bottom: 10px; }
+.summary-box p { color: #c8f0d0; margin-bottom: 10px; }
 .summary-box p:last-child { margin-bottom: 0; }
 
 /* ---- Structure arborescente (utilisée par index.html) ---- */
@@ -115,23 +120,22 @@ p { margin-bottom: 20px; color: #4a4030; }
 .branch {
   margin-bottom: 8px;
   padding: 14px 0;
-  border-bottom: 1px solid #ece3d2;
+  border-bottom: 1px solid #161a33;
 }
 .branch:last-child { border-bottom: none; }
 
 .branch-title {
-  color: #241f18;
-  font-size: 1.05em;
+  color: #fff;
+  font-size: 0.92em;
   font-weight: 600;
   margin-bottom: 4px;
-  text-decoration: none;
-  display: inline-block;
 }
-a.branch-title:visited { color: #241f18; }
-a.branch-title:hover { color: #b5502b; }
-.branch-title a { color: #241f18; text-decoration: none; }
-.branch-title a:visited { color: #241f18; }
-.branch-title a:hover { color: #b5502b; }
+.branch-title a { color: #fff; text-decoration: none; }
+.branch-title a:visited { color: #fff; }
+.branch-title a:hover { color: #4a90e2; }
+a.branch-title { text-decoration: none; }
+a.branch-title:visited { color: #fff; }
+a.branch-title:hover { color: #4a90e2; }
 
 /* ---- Accordéon natif (<details>/<summary>), zéro JS ----
    .branch-title est réutilisé comme <summary> : on masque le marqueur
@@ -150,7 +154,7 @@ summary.branch-title::-webkit-details-marker { display: none; }
 summary.branch-title::before {
   content: "▸";
   display: inline-block;
-  color: #8a7d6c;
+  color: #7a8296;
   transition: transform 0.15s ease;
   flex-shrink: 0;
 }
@@ -159,7 +163,7 @@ details[open] > summary.branch-title::before {
 }
 
 .branch-desc {
-  color: #8a7d6c;
+  color: #8a90a8;
   font-size: 0.88em;
   margin-bottom: 10px;
 }
@@ -167,18 +171,18 @@ details[open] > summary.branch-title::before {
 .children {
   margin-left: 20px;
   padding-left: 16px;
-  border-left: 1px solid #e5dccc;
+  border-left: 1px solid #232849;
 }
 
 .child {
   padding: 6px 0;
   font-size: 0.92em;
 }
-.child a { color: #5a4f3c; text-decoration: none; }
-.child a:visited { color: #5a4f3c; }
-.child a:hover { color: #b5502b; text-decoration: underline; }
-.child .note { color: #8a7d6c; font-size: 0.85em; margin-left: 8px; }
-.child-desc { color: #8a7d6c; font-size: 0.85em; margin-top: 3px; }
+.child a { color: #b8bcd8; text-decoration: none; }
+.child a:visited { color: #b8bcd8; }
+.child a:hover { color: #4a90e2; text-decoration: underline; }
+.child .note { color: #5a6080; font-size: 0.85em; margin-left: 8px; }
+.child-desc { color: #5a6080; font-size: 0.85em; margin-top: 3px; }
 
 /* ---- Tags de statut (live / draft / planned) ---- */
 
@@ -190,30 +194,30 @@ details[open] > summary.branch-title::before {
   margin-left: 8px;
   font-family: 'SF Mono', Consolas, monospace;
 }
-.status-live { background: #e3f7e8; color: #1f8a3d; }
-.status-draft { background: #fdf1de; color: #a56a12; }
-.status-planned { background: #f1e8fa; color: #7a4fa8; }
-.status-ready { background: #e1f5fa; color: #147a91; }
+.status-live { background: #16311f; color: #6bcf7f; }
+.status-draft { background: #332412; color: #e0a94a; }
+.status-planned { background: #241832; color: #a888d0; }
+.status-ready { background: #0d2b33; color: #4ac8e0; }
 
 /* ---- Liens internes — vers un concept du glossaire, même corpus ---- */
 
 a.link-internal {
-  color: #7a4fa8;
+  color: #a888d0;
   text-decoration: none;
-  border-bottom: 1px dotted #7a4fa8;
+  border-bottom: 1px dotted #a888d0;
 }
-a.link-internal:visited { color: #7a4fa8; }
-a.link-internal:hover { color: #9366c2; border-bottom-style: solid; }
+a.link-internal:visited { color: #a888d0; }
+a.link-internal:hover { color: #c4aee8; border-bottom-style: solid; }
 
 /* ---- Liens externes — vers une source ou figure d'autorité extérieure ---- */
 
 a.link-external {
-  color: #2f9c53;
+  color: #6bcf7f;
   text-decoration: none;
-  border-bottom: 1px solid #2f9c53;
+  border-bottom: 1px solid #6bcf7f;
 }
-a.link-external:visited { color: #2f9c53; }
-a.link-external:hover { color: #278046; }
+a.link-external:visited { color: #6bcf7f; }
+a.link-external:hover { color: #8fe89f; }
 a.link-external::after {
   content: " ↗";
   font-size: 0.85em;
@@ -231,25 +235,25 @@ a.link-external::after {
 .lang-switch a {
   font-size: 0.78em;
   font-family: 'SF Mono', Consolas, monospace;
-  color: #8a7d6c;
+  color: #7a8296;
   text-decoration: none;
   padding: 3px 9px;
-  border: 1px solid #ded2ba;
+  border: 1px solid #232849;
   border-radius: 4px;
 }
-.lang-switch a:hover { color: #b5502b; border-color: #b5502b; }
-.lang-switch a.active { color: #241f18; background: #f3ecdd; border-color: #d8cbb5; }
+.lang-switch a:hover { color: #4a90e2; border-color: #4a90e2; }
+.lang-switch a.active { color: #fff; background: #1e2340; border-color: #1e2340; }
 
 /* ---- Liens de navigation générique ---- */
 
 .back-link {
   display: inline-block;
   margin-top: 40px;
-  color: #b5502b;
+  color: #4a90e2;
   text-decoration: none;
   font-size: 0.9em;
 }
-.back-link:visited { color: #b5502b; }
+.back-link:visited { color: #4a90e2; }
 .back-link:hover { text-decoration: underline; }
 
 /* ---- Front-matter block (pages Asset) — clé/valeur alignées ---- */
@@ -264,7 +268,7 @@ a.link-external::after {
   align-items: center;
   gap: 14px;
   padding: 8px 0;
-  border-bottom: 1px solid #ece3d2;
+  border-bottom: 1px solid #161a33;
 }
 .fm-key-col {
   flex: 0 0 140px;
@@ -272,15 +276,15 @@ a.link-external::after {
 }
 .fm-key {
   display: inline-block;
-  background: #faece2;
-  color: #b5502b;
+  background: #16233d;
+  color: #6bb3f0;
   padding: 2px 9px;
   border-radius: 3px;
   white-space: nowrap;
 }
 .fm-value {
   flex: 1;
-  color: #4a4030;
+  color: #c8cce0;
   text-align: left;
 }
 .fm-value a.link-internal { font-family: 'SF Mono', Consolas, monospace; }
@@ -288,7 +292,7 @@ a.link-external::after {
 /* ---- Message des pages d'attente (destinations draft/planned/ready pas encore construites) ---- */
 
 .placeholder-message {
-  color: #8a7d6c;
-  font-size: 1.05em;
+  color: #8a90a8;
+  font-size: 0.92em;
   margin-top: 24px;
 }
