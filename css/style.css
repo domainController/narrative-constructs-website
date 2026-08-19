@@ -61,6 +61,7 @@ h1 {
 
 .brand-h1 { display: flex; align-items: center; gap: 12px; }
 .brand-icon { font-size: 1em; line-height: 1; }
+.brand-icon svg { width: 1.3em; height: 1.3em; display: block; }
 
 h2 {
   color: #fff;
@@ -198,6 +199,7 @@ details[open] > summary.branch-title::before {
 .status-draft { background: #332412; color: #e0a94a; }
 .status-planned { background: #241832; color: #a888d0; }
 .status-ready { background: #0d2b33; color: #4ac8e0; }
+.status-concept { background: #2a1a2e; color: #d47fc9; }
 
 /* ---- Liens internes — vers un concept du glossaire, même corpus ---- */
 
