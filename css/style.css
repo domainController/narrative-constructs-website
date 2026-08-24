@@ -205,8 +205,12 @@ details[open] > summary.branch-title::before {
 /* ---- Pôles (accordéon niveau 1 : ClausTheory / ClausLabs / ClausWorks) ----
    Regroupe les .branch existantes sous 3 sections repliables. Réutilise les
    tailles de police déjà établies (.branch-title 0.92em, .branch-desc
-   0.88em) pour les entrées ; le niveau pôle emprunte le poids de h2 (blanc,
-   gras) mais reste sur une seule ligne avec son sous-titre et son compteur. */
+   0.88em) pour les entrées. Poids 600 sur le titre du pôle — pas 700 : dans
+   toute la feuille de style, 700 n'est réservé qu'aux vrais titres de page
+   (h1) et de section (h2) ; 600 est le poids maximal déjà utilisé pour un
+   intitulé d'entrée de liste cliquable (.branch-title), et un pôle reste
+   conceptuellement une entrée de liste (juste un cran au-dessus), pas un
+   titre de page. */
 
 details.pole {
   margin-bottom: 8px;
@@ -224,7 +228,7 @@ summary.pole-title {
   padding: 14px 0;
   color: #fff;
   font-size: 1.05em;
-  font-weight: 700;
+  font-weight: 600;
 }
 summary.pole-title::-webkit-details-marker { display: none; }
 summary.pole-title::before {
@@ -258,7 +262,7 @@ details.pole[open] > summary.pole-title::before { transform: rotate(90deg); }
   color: #c8cce0;
   border-left: 3px solid #4a90e2;
 }
-.pole-valueprop strong { color: #f0f0f5; }
+.pole-valueprop strong { color: #f0f0f5; font-weight: 600; }
 
 .pole-body {
   margin-left: 26px;
