@@ -202,63 +202,20 @@ details[open] > summary.branch-title::before {
 .status-concept { background: #2a1a2e; color: #d47fc9; }
 .status-research { background: #16233d; color: #6bb3f0; }
 
-/* ---- Pôles (accordéon niveau 1 : ClausTheory / ClausLabs / ClausWorks) ----
-   Regroupe les .branch existantes sous 3 sections repliables. Le titre du
-   pôle reprend exactement le registre de .child a (0.92em, poids 400,
-   #b8bcd8) plutôt que .branch-title : un pôle est une entrée cliquable au
-   même titre que "Thesis"/"Method"/"Clinic" sur une page produit, pas un
-   titre de page — rien ne justifie qu'il soit plus gras ou plus blanc. Pas
-   de paragraphe de value prop à l'ouverture : ça fait du bruit dans une
-   liste censée rester une liste ; la value prop de chaque pôle a vocation
-   à vivre sur sa propre page plus tard, pas ici. */
+/* ---- Navigation "poupées russes" (une page par niveau : index.html ->
+   claustheory/clauslabs/index.html -> pages produit) ----
+   .home-icon(-active) et .nav-back vivent dans .meta-bar, à gauche de la
+   catégorie/version/date déjà présentes. home-icon-active (non lien) sur
+   la page qu'on consulte déjà ; home-icon (lien) sur toutes les autres,
+   toujours vers la racine du site. nav-back pointe vers le niveau
+   immédiatement parent, pas systématiquement la racine. Remplace
+   l'accordéon .pole/.pole-title/.pole-body (retiré, plus aucune page ne
+   s'en sert depuis le passage à cette architecture). */
 
-details.pole {
-  margin-bottom: 8px;
-  border-bottom: 1px solid #161a33;
-}
-details.pole:last-of-type { border-bottom: none; }
-
-summary.pole-title {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
-  padding: 14px 0;
-  color: #b8bcd8;
-  font-size: 0.92em;
-  font-weight: 400;
-}
-summary.pole-title:hover { color: #4a90e2; }
-summary.pole-title::-webkit-details-marker { display: none; }
-summary.pole-title::before {
-  content: "▸";
-  display: inline-block;
-  color: #7a8296;
-  transition: transform 0.15s ease;
-  flex-shrink: 0;
-}
-details.pole[open] > summary.pole-title::before { transform: rotate(90deg); }
-
-.pole-sub {
-  color: #7a8296;
-  font-size: 1em;
-  font-weight: 400;
-}
-.pole-count {
-  margin-left: auto;
-  font-family: 'SF Mono', Consolas, monospace;
-  font-size: 0.68em;
-  font-weight: 400;
-  color: #7a8296;
-}
-
-.pole-body {
-  margin-left: 26px;
-  padding-bottom: 4px;
-}
-.pole-body .branch:last-child { border-bottom: none; }
+.home-icon { color: #7a8296; text-decoration: none; font-size: 1.05em; line-height: 1; }
+.home-icon:hover { color: #4a90e2; }
+.home-icon-active { color: #4a90e2; font-size: 1.05em; line-height: 1; }
+.nav-back { color: #4a90e2; text-decoration: none; }
 
 /* ---- Liens internes — vers un concept du glossaire, même corpus ---- */
 
