@@ -1,0 +1,117 @@
+/* ============================================================
+   TAXONOMY — SHARED STYLESHEET
+   Scope: root index.html + the 6 top-level category pages and their
+   sub-pages (legal-anthropology/, economic-anthropology/,
+   reflexive-law-lab/, intellectual-capital-lab/, immersive-audit-lab/,
+   vertical-labs/). Deliberately separate from css/style.css, which
+   still serves the older product pages (welcome.html, auditum-memoria.
+   html, etc.) — different palette, fonts and layout width by design,
+   not to be merged.
+   Source of truth: nc-simulation-v4.html (validated mockup, 17.09.2026)
+   and the accompanying handoff fiche — values reproduced verbatim,
+   adapted from a single-page JS re-render to real multi-page navigation
+   (real <a> links instead of onclick/enter(), no JS at all).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#0a0d16;
+  --text:#eef0f4;
+  --text-muted:#7c8496;
+  --link:#6ba3de;
+  --rule:#232838;
+  --live-fg:#5fd39b; --live-bg:#122c22;
+  --draft-fg:#e0b25c; --draft-bg:#332409;
+  --concept-fg:#b79bef; --concept-bg:#261d3a;
+  --research-fg:#8fb0d9; --research-bg:#152436;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding-inline: 20px;
+  padding-block: 48px 80px;
+}
+.page{ max-width: 620px; margin-inline: auto; }
+
+/* ---- Fil d'Ariane ---- */
+
+.crumb{
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.crumb .home{ color: var(--text-muted); text-decoration: none; }
+.crumb .home:hover{ color: var(--link); }
+.crumb .home.active{ color: var(--link); }
+.crumb a{ color: var(--link); text-decoration: none; }
+.crumb a:hover{ text-decoration: underline; }
+.crumb .current{ color: var(--link); }
+.crumb .sep{ color: var(--rule); }
+
+/* ---- Titre / tagline de la vue courante ---- */
+
+h1{
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.tagline{
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0 0 40px;
+  max-width: 50ch;
+}
+
+/* ---- Badge de statut (un seul par item, jamais plusieurs) ---- */
+
+.badge{
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.badge.live{ color: var(--live-fg); background: var(--live-bg); }
+.badge.draft{ color: var(--draft-fg); background: var(--draft-bg); }
+.badge.concept{ color: var(--concept-fg); background: var(--concept-bg); }
+.badge.research{ color: var(--research-fg); background: var(--research-bg); }
+.badge.external{ color: var(--text-muted); background: #14171f; }
+
+/* ---- Liste plate des enfants directs ----
+   .item est un <a> (enfant avec sa propre page, ou lien externe) quand
+   cliquable, un <div> sinon (feuille terminale, sans page dédiée) —
+   même rendu visuel dans les deux cas, seul .clickable ajoute le hover. */
+
+.list{
+  border-left: 2px solid var(--rule);
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.item{ display: block; text-decoration: none; color: inherit; }
+.item .title-line{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.item .name{ font-size: 1.08rem; font-weight: 600; color: var(--text); }
+.item.clickable:hover .name{ color: var(--link); }
+.item .desc{
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
