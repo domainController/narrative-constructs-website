@@ -66,15 +66,12 @@
 
   </div>
 
-  <!-- Accent bordeaux scopé à cette page (root menu) uniquement —
-       ne pas répercuter dans css/taxonomy.css, qui reste en bleu
-       --link pour les sous-pages. -->
+  <!-- Liens croisés vers l'écosystème : mêmes couleurs/police que le
+       reste du site (var(--link) de css/taxonomy.css), pas d'accent
+       propre à cette page. -->
   <style>
-    .crumb { gap: 6px; font-size: 12px; }
-    .crumb .home.active { color: #a8556a; }
-    a.site-link { color: #a8556a; text-decoration: none; }
+    a.site-link { color: var(--link); text-decoration: none; }
     a.site-link:hover { text-decoration: underline; }
-    .item.clickable:hover .name { color: #a8556a; }
   </style>
 </body>
 </html>
