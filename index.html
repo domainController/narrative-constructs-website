@@ -27,7 +27,11 @@
     <div class="crumb">
       <span class="home active" title="Home">&#8962;</span>
       <span class="sep">·</span>
-      <span>Updated September 17, 2026</span>
+      <span>Updated September 21, 2026</span>
+      <span class="sep">·</span>
+      <a class="site-link" href="https://auditum-memoria.com">Auditum Memoria</a>
+      <span class="sep">·</span>
+      <a class="site-link" href="https://mottrum.com">Möttrum</a>
     </div>
 
     <h1>Narrative Constructs</h1>
@@ -61,5 +65,16 @@
     </div>
 
   </div>
+
+  <!-- Accent bordeaux scopé à cette page (root menu) uniquement —
+       ne pas répercuter dans css/taxonomy.css, qui reste en bleu
+       --link pour les sous-pages. -->
+  <style>
+    .crumb { gap: 6px; font-size: 12px; }
+    .crumb .home.active { color: #a8556a; }
+    a.site-link { color: #a8556a; text-decoration: none; }
+    a.site-link:hover { text-decoration: underline; }
+    .item.clickable:hover .name { color: #a8556a; }
+  </style>
 </body>
 </html>
