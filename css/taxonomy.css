@@ -3,28 +3,26 @@
    Scope: root index.html + the 6 top-level category pages and their
    sub-pages (legal-anthropology/, economic-anthropology/,
    reflexive-law-lab/, intellectual-capital-lab/, immersive-audit-lab/,
-   vertical-labs/). Deliberately separate from css/style.css, which
-   still serves the older product pages (welcome.html, auditum-memoria.
-   html, etc.) — different palette, fonts and layout width by design,
-   not to be merged.
-   Source of truth: nc-simulation-v4.html (validated mockup, 17.09.2026)
-   and the accompanying handoff fiche — values reproduced verbatim,
-   adapted from a single-page JS re-render to real multi-page navigation
-   (real <a> links instead of onclick/enter(), no JS at all).
+   vertical-labs/).
+   Visual tokens (background, fonts, responsive type scale, status
+   colors) synced with the AUDITUM MEMORIA shared stylesheet used by
+   the rest of the ecosystem (portfolio, aletheia-frameworks-site,
+   mottrum-site) — class names stay taxonomy-specific
+   (.crumb/.item/.badge/.list), only the underlying values are
+   aligned, so this page renders consistently with its siblings
+   without a markup rewrite.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 :root{
-  --bg:#0a0d16;
+  --bg:#0a0e24;
   --text:#eef0f4;
-  --text-muted:#7c8496;
-  --link:#6ba3de;
-  --rule:#232838;
-  --live-fg:#5fd39b; --live-bg:#122c22;
-  --draft-fg:#e0b25c; --draft-bg:#332409;
-  --concept-fg:#b79bef; --concept-bg:#261d3a;
-  --research-fg:#8fb0d9; --research-bg:#152436;
+  --text-muted:#7a8296;
+  --link:#4a90e2;
+  --rule:#1e2340;
+  --live-fg:#63c98c; --live-bg:rgba(99, 201, 140, 0.15);
+  --draft-fg:#e0a94a; --draft-bg:#332412;
+  --concept-fg:#d47fc9; --concept-bg:#2a1a2e;
+  --research-fg:#6bb3f0; --research-bg:#16233d;
   color-scheme: dark;
 }
 
@@ -33,7 +31,8 @@ body{
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.7;
   padding-inline: 20px;
   padding-block: 48px 80px;
 }
@@ -42,8 +41,8 @@ body{
 /* ---- Fil d'Ariane ---- */
 
 .crumb{
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 13px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: clamp(0.82em, calc(0.766em + 0.015vw), 0.88em);
   color: var(--text-muted);
   margin-bottom: 40px;
   display: flex;
@@ -62,14 +61,14 @@ body{
 /* ---- Titre / tagline de la vue courante ---- */
 
 h1{
-  font-size: 2.1rem;
-  font-weight: 600;
+  font-size: clamp(1.7em, calc(1.5875em + 0.0312vw), 1.825em);
+  font-weight: 700;
   margin: 0 0 12px;
   text-wrap: balance;
 }
 .tagline{
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: clamp(0.95em, calc(0.887em + 0.0175vw), 1.02em);
   margin: 0 0 40px;
   max-width: 50ch;
 }
@@ -77,8 +76,8 @@ h1{
 /* ---- Badge de statut (un seul par item, jamais plusieurs) ---- */
 
 .badge{
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: clamp(0.72em, calc(0.6705em + 0.0137vw), 0.775em);
   padding: 2px 8px;
   border-radius: 3px;
   white-space: nowrap;
@@ -108,10 +107,10 @@ h1{
   gap: 10px;
   flex-wrap: wrap;
 }
-.item .name{ font-size: 1.08rem; font-weight: 600; color: var(--text); }
+.item .name{ font-size: clamp(1.05em, calc(0.978em + 0.02vw), 1.13em); font-weight: 600; color: var(--text); }
 .item.clickable:hover .name{ color: var(--link); }
 .item .desc{
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.92em, calc(0.857em + 0.0175vw), 0.99em);
   margin-top: 4px;
 }
