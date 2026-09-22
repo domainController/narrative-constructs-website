@@ -9,6 +9,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Root base: every size below is em, so without this the browser falls back
+   to its own 16px default. 15px matches the fix already applied to
+   patricek.info's homepage and to the portfolio repo's copy of this
+   stylesheet (2026-09-22) — this is the source file the pattern is
+   copied from, and it had never gotten the fix itself. */
+html { font-size: 15px; }
+
 body {
   background: #0a0e27;
   color: #e0e0e0;
