@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deterministic Ventures — Narrative Constructs</title>
-<link rel="stylesheet" href="../../css/style.css">
+<title>Labs — Deterministic Ventures</title>
+<link rel="stylesheet" href="../../../css/style.css">
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-_Yae17WgYv5H2YEzDwsZE.js"></script>
 <script>
@@ -17,9 +17,9 @@
 
     <div class="meta-bar">
       <div class="meta-left">
-        <a class="home-icon" href="../../index.html" title="Home">&#8962;</a>
+        <a class="home-icon" href="../../../index.html" title="Home">&#8962;</a>
         <span class="sep">·</span>
-        <a href="../index.html" class="nav-back">Vertical Labs</a>
+        <a href="../index.html" class="nav-back">Deterministic Ventures</a>
         <span class="sep">·</span>
         <span id="last-updated">Updated —</span>
         <span class="sep">·</span>
@@ -27,31 +27,14 @@
       </div>
     </div>
 
-    <h1>Deterministic Ventures</h1>
-    <div class="subtitle">Doctrine, ventures, tools and labs for the small-cap PE ecosystem.</div>
+    <h1>Labs</h1>
+    <div class="subtitle">Internal function — Narrative Constructs applied to numbers.</div>
 
     <div class="children">
-
       <div class="child">
-        <a href="doctrine/index.html">The Doctrine</a> <span class="status-tag status-draft">draft</span>
-        <div class="child-desc">Deterministic Venture — re-grounding tech business models, built with handover and scale-up in mind.</div>
+        <a href="finance-governance-lab/index.html">Finance &amp; Governance Lab</a> <span class="status-tag status-draft">draft</span>
+        <div class="child-desc">Finance, accounting and governance analysis — the group's original lab function.</div>
       </div>
-
-      <div class="child">
-        <a href="ventures/index.html">Ventures</a> <span class="status-tag status-draft">draft</span>
-        <div class="child-desc">Business Model Ventures and Portfolio — produced for handover.</div>
-      </div>
-
-      <div class="child">
-        <a href="tools/index.html">Tools &amp; Frameworks</a> <span class="status-tag status-draft">draft</span>
-        <div class="child-desc">Lucid Asset Framework and LiveLedger — instruments for the ecosystem.</div>
-      </div>
-
-      <div class="child">
-        <a href="labs/index.html">Labs</a> <span class="status-tag status-draft">draft</span>
-        <div class="child-desc">The group's finance and governance lab — Narrative Constructs applied to numbers.</div>
-      </div>
-
     </div>
 
   </div>
@@ -89,7 +72,7 @@
 (function () {
   var el = document.getElementById('last-updated');
   if (!el) return;
-  var path = 'vertical-labs/deterministic-ventures/index.html';
+  var path = 'vertical-labs/deterministic-ventures/labs/index.html';
   fetch('https://api.github.com/repos/domainController/portfolio/commits?path=' + encodeURIComponent(path) + '&per_page=1')
     .then(function (r) { return r.json(); })
     .then(function (data) {
