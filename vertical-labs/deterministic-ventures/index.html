@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vertical Labs — Narrative Constructs</title>
-<link rel="stylesheet" href="../css/style.css">
+<title>Deterministic Ventures — Narrative Constructs</title>
+<link rel="stylesheet" href="../../css/style.css">
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-_Yae17WgYv5H2YEzDwsZE.js"></script>
 <script>
@@ -17,9 +17,9 @@
 
     <div class="meta-bar">
       <div class="meta-left">
-        <a class="home-icon" href="../index.html" title="Home">&#8962;</a>
+        <a class="home-icon" href="../../index.html" title="Home">&#8962;</a>
         <span class="sep">·</span>
-        <span class="category">Vertical Labs</span>
+        <a href="../index.html" class="nav-back">Vertical Labs</a>
         <span class="sep">·</span>
         <span id="last-updated">Updated —</span>
         <span class="sep">·</span>
@@ -27,22 +27,31 @@
       </div>
     </div>
 
-    <h1>Vertical Labs</h1>
-    <div class="subtitle">Studios appliqués, déportés sur leurs propres domaines.</div>
+    <h1>Deterministic Ventures</h1>
+    <div class="subtitle">Doctrine, ventures, tools and labs for the small-cap PE ecosystem.</div>
 
     <div class="children">
+
       <div class="child">
-        <a href="deterministic-ventures/index.html">Deterministic Ventures</a> <span class="status-tag status-draft">draft</span>
-        <div class="child-desc">Doctrine, ventures, tools and labs for the small-cap PE ecosystem.</div>
+        <a href="doctrine/index.html">The Doctrine</a> <span class="status-tag status-draft">draft</span>
+        <div class="child-desc">Deterministic Venture — re-grounding tech business models, built with handover and scale-up in mind.</div>
       </div>
+
       <div class="child">
-        <a href="https://clauslabs.ai" target="_blank" rel="noopener">ClausLabs.ai</a> <span class="status-tag status-external">external</span>
-        <div class="child-desc">Pre-contentious intelligence.</div>
+        <a href="ventures/index.html">Ventures</a> <span class="status-tag status-draft">draft</span>
+        <div class="child-desc">Business Model Ventures and Portfolio — produced for handover.</div>
       </div>
+
       <div class="child">
-        <a href="https://clausworks.ai" target="_blank" rel="noopener">ClausWorks.ai</a> <span class="status-tag status-external">external</span>
-        <div class="child-desc">Regulatory entrepreneurship — mis de côté pour l'instant.</div>
+        <a href="tools/index.html">Tools &amp; Frameworks</a> <span class="status-tag status-draft">draft</span>
+        <div class="child-desc">Lucid Asset Framework and LiveLedger — instruments for the ecosystem.</div>
       </div>
+
+      <div class="child">
+        <a href="labs/index.html">Labs</a> <span class="status-tag status-draft">draft</span>
+        <div class="child-desc">The group's finance and governance lab — Narrative Constructs, oriented toward numbers and accounting.</div>
+      </div>
+
     </div>
 
   </div>
@@ -80,7 +89,7 @@
 (function () {
   var el = document.getElementById('last-updated');
   if (!el) return;
-  var path = 'vertical-labs/index.html';
+  var path = 'vertical-labs/deterministic-ventures/index.html';
   fetch('https://api.github.com/repos/domainController/portfolio/commits?path=' + encodeURIComponent(path) + '&per_page=1')
     .then(function (r) { return r.json(); })
     .then(function (data) {
